@@ -5,22 +5,22 @@ https://github.com/fivethirtyeight/data/tree/master/airline-safety
 
 # read the whole file at once, return a single string (including newlines)
 # 'rU' mode (read universal) converts different line endings into '\n'
-f = open('airlines.csv', mode='rU')
+f = open('data/airline-safety.csv', mode='rU')
 file_string = f.read()
 f.close()
 
 # use a context manager to automatically close your file
-with open('airlines.csv', mode='rU') as f:
+with open('data/airline-safety.csv', mode='rU') as f:
     file_string = f.read()
 
 # read the file into a list (each list element is one row)
-with open('airlines.csv', mode='rU') as f:
+with open('data/airline-safety.csv', mode='rU') as f:
     file_list = []
     for row in f:
         file_list.append(row)
 
 # do the same thing using a list comprehension
-with open('airlines.csv', mode='rU') as f:
+with open('data/airline-safety.csv', mode='rU') as f:
     file_list = [row for row in f]
 
 # side note: splitting strings
@@ -28,12 +28,12 @@ with open('airlines.csv', mode='rU') as f:
 'hello DAT students'.split('e')
 
 # split each string (at the commas) into a list
-with open('airlines.csv', mode='rU') as f:
+with open('data/airline-safety.csv', mode='rU') as f:
     file_nested_list = [row.split(',') for row in f]
 
 # do the same thing using the csv module
 import csv
-with open('airlines.csv', mode='rU') as f:
+with open('data/airline-safety.csv', mode='rU') as f:
     file_nested_list = [row for row in csv.reader(f)]
 
 # separate the header and data
